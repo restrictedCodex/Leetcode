@@ -7,36 +7,7 @@ struct Node
     struct Node *next;
 };
 
-struct Node *addToEmpty(struct Node *last, int data)
-{
-    if (last != NULL)
-        return last;
 
-    struct Node *temp =
-        (struct Node *)malloc(sizeof(struct Node));
-
-    temp->data = data;
-    last = temp;
-
-    last->next = last;
-
-    return last;
-}
-
-struct Node *addBegin(struct Node *last, int data)
-{
-    if (last == NULL)
-        return addToEmpty(last, data);
-
-    struct Node *temp =
-        (struct Node *)malloc(sizeof(struct Node));
-
-    temp->data = data;
-    temp->next = last->next;
-    last->next = temp;
-
-    return last;
-}
 
 struct Node *addEnd(struct Node *last, int data)
 {
@@ -78,6 +49,37 @@ struct Node *addAfter(struct Node *last, int data, int item)
     } while (p != last->next);
 
     cout << item << " not present in the list." << endl;
+    return last;
+}
+
+struct Node *addToEmpty(struct Node *last, int data)
+{
+    if (last != NULL)
+        return last;
+
+    struct Node *temp =
+        (struct Node *)malloc(sizeof(struct Node));
+
+    temp->data = data;
+    last = temp;
+
+    last->next = last;
+
+    return last;
+}
+
+struct Node *addBegin(struct Node *last, int data)
+{
+    if (last == NULL)
+        return addToEmpty(last, data);
+
+    struct Node *temp =
+        (struct Node *)malloc(sizeof(struct Node));
+
+    temp->data = data;
+    temp->next = last->next;
+    last->next = temp;
+
     return last;
 }
 
