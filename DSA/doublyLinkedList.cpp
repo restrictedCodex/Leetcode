@@ -9,15 +9,6 @@ class Node {
     Node* prev;
 };
 
-void insertAtHead(Node** head_ref, int n){
-    Node* new_node = new Node();
-    new_node->data = n;
-    new_node->next = (*head_ref);
-    new_node->prev = NULL;
-    if((*head_ref) != NULL)
-        (*head_ref)->prev = new_node;
-    (*head_ref) = new_node;
-}
 
 void insertAfter(Node* prev_node, int n){
     if(prev_node == NULL){
@@ -33,6 +24,15 @@ void insertAfter(Node* prev_node, int n){
         new_node->next->prev = new_node;
 }
 
+void insertAtHead(Node** head_ref, int n){
+    Node* new_node = new Node();
+    new_node->data = n;
+    new_node->next = (*head_ref);
+    new_node->prev = NULL;
+    if((*head_ref) != NULL)
+        (*head_ref)->prev = new_node;
+    (*head_ref) = new_node;
+}
 
 
 
