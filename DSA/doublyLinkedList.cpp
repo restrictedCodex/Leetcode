@@ -33,24 +33,7 @@ void insertAfter(Node* prev_node, int n){
         new_node->next->prev = new_node;
 }
 
-void printList(Node* node)
-{
-    Node* last;
-    cout<<"\nTraversal in forward direction \n";
-    while (node != NULL)
-    {
-        cout<<" "<< node->data <<" ";
-        last = node;
-        node = node->next;
-    }
- 
-    cout<<"\nTraversal in reverse direction \n";
-    while (last != NULL)
-    {
-        cout<<" "<< last->data <<" ";
-        last = last->prev;
-    }
-}
+
 
 
 void insertAtLast(Node** head_ref, int new_data)
@@ -72,6 +55,25 @@ void insertAtLast(Node** head_ref, int new_data)
     last->next = new_node;
     new_node->prev = last;
     return;
+}
+
+void printList(Node* node)
+{
+    Node* last;
+    cout<<"\nTraversal in forward direction \n";
+    while (node != NULL)
+    {
+        cout<<" "<< node->data <<" ";
+        last = node;
+        node = node->next;
+    }
+ 
+    cout<<"\nTraversal in reverse direction \n";
+    while (last != NULL)
+    {
+        cout<<" "<< last->data <<" ";
+        last = last->prev;
+    }
 }
 
 int main(){
