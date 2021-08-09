@@ -26,6 +26,17 @@ int main(){
 
 
 
+
+
+    map<int,int> M;
+    M[1] = 100;
+    M[2] = -1;
+    M[3] = 300;
+    M[1] = 100;
+    M[1000023] = 1;
+
+
+    
     set<int> s;
     s.insert(5);
     s.insert(1);
@@ -36,14 +47,6 @@ int main(){
         //cout << x << " ";
     }
     cout << s[2];
-
-
-    map<int,int> M;
-    M[1] = 100;
-    M[2] = -1;
-    M[3] = 300;
-    M[1] = 100;
-    M[1000023] = 1;
 
     return 0;
 }
